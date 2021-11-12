@@ -22,12 +22,15 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.boot:spring-boot-starter-security")
-	// implementation("org.flywaydb:flyway-core")
+	implementation("org.springframework.session:spring-session-data-redis")
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0")
+	implementation("io.springfox:springfox-boot-starter:3.0.0")
+
+	// implementation("org.flywaydb:flyway-core")
 	runtimeOnly("mysql:mysql-connector-java:8.0.23")
 	implementation("org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.2.1")
 	mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
-	implementation("io.springfox:springfox-boot-starter:3.0.0")
+	implementation("redis.clients:jedis")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
