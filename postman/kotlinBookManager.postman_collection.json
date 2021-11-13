@@ -44,7 +44,7 @@
 									"variable": [
 										{
 											"key": "bookId",
-											"value": "100",
+											"value": "222",
 											"description": "(Required) bookId"
 										}
 									]
@@ -1044,6 +1044,77 @@
 							"port": "8080",
 							"path": [
 								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rental",
+			"item": [
+				{
+					"name": "startRental",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/rental/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rental",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "endRental",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/rental/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rental",
+								"100"
 							]
 						}
 					},

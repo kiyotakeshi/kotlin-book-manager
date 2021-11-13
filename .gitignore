@@ -38,7 +38,5 @@ out/
 
 ### custom ###
 .docker
-#data/redis/dump.rdb
 node_modules
 package-lock.json
-data/redis/dump.rdb

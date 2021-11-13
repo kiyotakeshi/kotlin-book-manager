@@ -20,11 +20,17 @@ class PasswordEncodingTest {
         val bcrypt: PasswordEncoder = BCryptPasswordEncoder()
         val bcryptEncode1 = bcrypt.encode(password)
         val bcryptEncode2 = bcrypt.encode(password)
+        println("bcrypt encoded password1: $bcryptEncode1")
+        println("bcrypt encoded password2: $bcryptEncode2")
+
         assertNotEquals(bcryptEncode1, bcryptEncode2)
 
         val customEncoder: PasswordEncoder = CustomEncoder()
         val customEncode1 = customEncoder.encode(password)
         val customEncode2 = customEncoder.encode(password)
+        println("custom encoded password1: $customEncode1")
+        println("custom encoded password1: $customEncode2")
+
         assertEquals(customEncode1, customEncode2)
 
         // > BCrypt, however, will internally generate a random salt instead. This is important to understand because it means that each call will have a different result
