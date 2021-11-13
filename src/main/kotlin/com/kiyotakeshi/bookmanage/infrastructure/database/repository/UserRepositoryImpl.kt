@@ -4,6 +4,7 @@ import com.kiyotakeshi.bookmanage.domain.model.User
 import com.kiyotakeshi.bookmanage.domain.repository.UserRepository
 import com.kiyotakeshi.bookmanage.infrastructure.database.mapper.UserDynamicSqlSupport
 import com.kiyotakeshi.bookmanage.infrastructure.database.mapper.UserMapper
+import com.kiyotakeshi.bookmanage.infrastructure.database.mapper.selectByPrimaryKey
 import com.kiyotakeshi.bookmanage.infrastructure.database.record.UserRecord
 import com.kiyotakeshi.bookmanage.infrastructure.database.mapper.selectOne
 import org.mybatis.dynamic.sql.SqlBuilder.isEqualTo
@@ -14,6 +15,12 @@ import org.springframework.stereotype.Repository
 class UserRepositoryImpl(
     private val mapper: UserMapper
 ) : UserRepository {
+
+    override fun find(id: Long): User? {
+        val record = mapper.selectByPrimaryKey(id)
+        return record?.let { toModel(it) }
+    }
+
     override fun find(email: String): User? {
         val record = mapper.selectOne {
             where(UserDynamicSqlSupport.User.email, isEqualTo(email))

@@ -6,7 +6,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jackson:
     property-naming-strategy: SNAKE_CASE
-
+logging:
+  level:
+    root: INFO
 #  flyway:
 #    enabled: true
 #    baseline-on-migrate: true

@@ -24,6 +24,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.session:spring-session-data-redis")
 	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0")
+	implementation("org.springframework.boot:spring-boot-starter-aop")
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
 
 	// implementation("org.flywaydb:flyway-core")
