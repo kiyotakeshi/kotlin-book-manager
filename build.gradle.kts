@@ -33,7 +33,12 @@ dependencies {
 	mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
 	implementation("redis.clients:jedis")
 
+	// testImplementation は src/test/kotin 配下のコードでのみ使用される依存関係
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+	testImplementation("org.assertj:assertj-core:3.19.0")
+	testImplementation("org.mockito:mockito-core:3.8.0")
+	testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 }
 
 tasks.withType<KotlinCompile> {
